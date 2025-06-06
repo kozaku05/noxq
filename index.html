@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>noxq</h1>
+    <h2>質問箱連投ツール</h2>
+    <p>
+      注意：使用は自己責任になります。<br />製作者は一切の法的責任および人間関係の責任は取りません。
+    </p>
+    <div id="form">
+      <input
+        type="text"
+        id="url"
+        placeholder="相手のSunQのURLを入力してください"
+      />
+      <input
+        type="text"
+        id="question"
+        placeholder="質問内容を入力してください"
+      />
+      <input
+        type="number"
+        id="count"
+        placeholder="連投数を入力してください"
+        min="1"
+        max="500"
+      />
+      <button onclick="send()">送信</button>
+    </div>
+    <div id="logs">
+      <h2>ログ</h2>
+      <p id="end"></p>
+      <ul id="log"></ul>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>

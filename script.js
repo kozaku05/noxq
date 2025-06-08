@@ -7,21 +7,26 @@ async function send() {
   }
   let url = document.getElementById("url").value.trim();
   let question = document.getElementById("question").value.trim();
-  const number = document.getElementById("count").value.trim();
+  const number = parseInt(document.getElementById("count").value.trim());
   if (!url || !question || !number) {
-    alert("Please fill in all fields.");
+    alert("すべての項目を入力してください");
     return;
   }
   if (question.length > 498) {
-    alert("Message must be at least 498 characters long.");
+    alert("498文字以内で入力してください");
     return;
   }
   if (isNaN(number) || number <= 0 || number > 500) {
-    alert("Please enter a valid number greater than 1~500.");
+    alert("送信数は1から500の間で入力してください");
     return;
   }
   document.getElementById("log").innerHTML = "";
   count = 0;
+  const prefix = "https://sunq.me/";
+  if (!url.startsWith(prefix)) {
+    alert("URLはhttps://sunq.me/から始まる必要があります");
+    return;
+  }
   url = url.split("https://sunq.me/").pop();
   console.log("----------------noxq----------------");
   console.log("User ID:", url);
